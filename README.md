@@ -6,6 +6,16 @@ http://www.starrier.org
 ----
 
 
-# Blog build with Node.js
+# Blog build with Node.js（Express）
 
+### Developer 
+
+#### first 
+> npm install
+
+#### second
+> npm start
+
+#### thrid
+> localhost:3000
 
