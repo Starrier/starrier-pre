@@ -140,4 +140,10 @@ router.get('/delete/:articleID', function(req, res, next) {
         res.redirect('/')
     });
 });
+
+router.get('/articles',function (req, res, next) {
+    res.render('articles');
+})
+
+
 module.exports = router;
