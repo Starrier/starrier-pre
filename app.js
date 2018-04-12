@@ -9,8 +9,11 @@ var session = require('express-session');
 var index = require('./routes/index');
 var users = require('./routes/users');
 
+const fs = require('fs');
+const markdown = require('markdown-js');
 
 var app = express();
+
 app.use(session({
     secret:'blog',
     cookie:{maxAge:1000*60*24*30},
@@ -51,7 +54,14 @@ app.use(function(err, req, res, next) {
     res.render('error');
 });
 
-app.listen(3001,function(){
-    console.log('listening port 3000');
+app.engine('md',function (path, options, fn) {
+    fs.readFile(path,'utf8',function (err, str) {
+        if(err) {
+            return fn(err);
+        }
+        str = markdown.parse(str).toString();
+        fn(null, str);
+    });
 });
+
 module.exports = app;

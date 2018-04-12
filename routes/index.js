@@ -2,6 +2,8 @@ var express = require('express');
 var router = express.Router();
 var crypto = require('crypto');
 const mysql = require('./../database');
+const markdown = require('markdown-js');
+
 /* GET home page. */
 router.get('/', function(req, res, next) {
 
@@ -165,6 +167,11 @@ router.get('/articles', function(req, res, next) {
         res.redirect('/');
     });
 });*/
+
+router.get('/markdown', function (req, res, next) {
+    /* markdown.markHtml(); 是将 markdown 格式的字符转换成 Html。*/
+    res.render('index.md', {layout: false});
+});
 
 
 module.exports = router;
