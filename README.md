@@ -21,7 +21,7 @@ http://www.starrier.org
 
 ## Nginx Reverse Proxy
 
-I use **Nginx** as the reverse proxy server. Here are some of my configurations
+I use **Nginx** as the reverse proxy server,and here are some of the configurations I used when testing locally.
 
 ```
  upstream Starrier{
