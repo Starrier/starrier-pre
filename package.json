@@ -22,6 +22,7 @@
     "express-session": "^1.15.6",
     "extract-text-webpack-plugin": "^3.0.2",
     "html-webpack-plugin": "^3.2.0",
+    "markdown-js": "^0.0.4",
     "serve-favicon": "^2.4.5",
     "supervisor": "^0.12.0",
     "webpack": "^4.5.0",
