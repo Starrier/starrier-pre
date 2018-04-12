@@ -5,6 +5,7 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var session = require('express-session');
+var FileStore = require('session-file-store')(session);
 
 var index = require('./routes/index');
 var users = require('./routes/users');
@@ -12,10 +13,15 @@ var users = require('./routes/users');
 const fs = require('fs');
 const markdown = require('markdown-js');
 
+var identitykey = 'skey';
+
 var app = express();
+
 
 app.use(session({
     secret:'blog',
+    /*store:new FileStore(),
+    saveUninitialized:false,*/
     cookie:{maxAge:1000*60*24*30},
     resave: false,
     saveUninitialized: true
@@ -63,5 +69,7 @@ app.engine('md',function (path, options, fn) {
         fn(null, str);
     });
 });
+
+
 
 module.exports = app;
