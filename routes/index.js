@@ -4,6 +4,7 @@ var crypto = require('crypto');
 const mysql = require('./../database');
 /* GET home page. */
 router.get('/', function(req, res, next) {
+
     var query = 'SELECT * FROM article ORDER BY articleID DESC';
     mysql.query(query, function(err, rows, fields){
         var articles = rows;
@@ -18,6 +19,7 @@ router.get('/', function(req, res, next) {
 });
 router.get('/login', function(req, res, next) {
     res.render('login', {message:'',user:req.session.user});
+    console.log(user);
 });
 router.post('/login', function(req, res, next) {
     var name = req.body.name;
@@ -141,9 +143,28 @@ router.get('/delete/:articleID', function(req, res, next) {
     });
 });
 
-router.get('/articles',function (req, res, next) {
-    res.render('articles');
-})
+router.get('/articles', function(req, res, next) {
+    var user = req.session.user;
+
+    if(!user) {
+        res.redirect('/login');
+        return;
+    }
+    res.render('articles',{user:req.session.user});
+});
+/*router.post('/articles', function(req, res, next) {
+    var title = req.body.title;
+    var content = req.body.content;
+    var author = req.session.user.authorName;
+    var query = 'INSERT article SET articleTitle=' + mysql.escape(title) + ',articleAuthor=' + mysql.escape(author) + ',articleContent=' + mysql.escape(content) + ',articleTime=CURDATE()';
+    mysql.query(query, function(err, rows, fields) {
+        if(err) {
+            console.log(err);
+            return;
+        }
+        res.redirect('/');
+    });
+});*/
 
 
 module.exports = router;
