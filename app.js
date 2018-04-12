@@ -9,26 +9,6 @@ var session = require('express-session');
 var index = require('./routes/index');
 var users = require('./routes/users');
 
-// ************************************
-// This is the real meat of the example
-// ************************************
-(function() {
-    // Step 1: 引入 webpack 的配置文件和 生成 webpack 的编译器
-    var webpack = require('webpack');
-    var webpackConfig = require(process.env.WEBPACK_CONFIG ? process.env.WEBPACK_CONFIG : './webpack.config');
-    var compiler = webpack(webpackConfig);
-    // Step 2: 将编译器挂载给 webpack dev middleware
-    app.use(require("webpack-dev-middleware")(compiler, {
-        noInfo: true, publicPath: webpackConfig.output.publicPath
-    }));
-
-    // Step 3: 将编译器挂载给 webpack hot middleware
-    app.use(require("webpack-hot-middleware")(compiler, {
-        log: console.log, path: '/__webpack_hmr', heartbeat: 10 * 1000
-    }));
-})();
-
-
 
 var app = express();
 app.use(session({
