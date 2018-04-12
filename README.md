@@ -19,3 +19,28 @@ http://www.starrier.org
 #### thrid
 > localhost:3000
 
+## Nginx Reverse Proxy
+
+I use **Nginx** as the reverse proxy server. Here are some of my configurations
+
+```
+ upstream Starrier{
+        server 127.0.0.1:3000;
+        keepalive 64;
+    }
+
+    server {
+        listen       80 default_server;
+        listen       [::]:80 default_server;
+        server_name  127.0.0.1:3000;
+
+        #charset koi8-r;
+
+        #access_log  logs/host.access.log  main;
+
+        location / {
+           proxy_pass http://Starrier;
+           proxy_http_version 1.1;
+        }
+        
+```
