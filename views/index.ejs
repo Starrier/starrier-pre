@@ -81,8 +81,6 @@
         <div class="row">
             <div class="8u">
                 <section>
-                    <h2>Mollis ut adipiscing</h2>
-                    <a href="#" class="image fit"><img src="img/pic03.jpg" alt=""/></a>
                     <section class="main floatfix">
                         <section class="main-articles">
                             <ul>
@@ -91,9 +89,9 @@
                                     <h2><a href="/articles/<%= articles[i].articleID %>"><%= articles[i].articleTitle %></a></h2>
                                     <section class="main-articles-items-des">
                                         <p>
-                                            <span>作者：<%= articles[i].articleAuthor %></span>
-                                            <span>发布时间：<%= articles[i].articleTime %></span>
-                                            <span>浏览量：<%= articles[i].articleClick %></span>
+                                            <span><i class="fa fa-user fa-2x" aria-hidden="true"></i><%= articles[i].articleAuthor %></span>
+                                            <span><i class="fa fa-calendar fa-2x" aria-hidden="true"></i><%= articles[i].articleTime %></span>
+                                            <span><i class="fa fa-book fa-2x" aria-hidden="true"></i> <%= articles[i].articleClick %></span>
                                             <% if(user) { %>
                                             <span class="delete"><a href="/delete/<%= articles[i].articleID %>">删除</a></span>
                                             <span class="modify"><a href="/modify/<%= articles[i].articleID %>">编辑</a></span>
@@ -107,6 +105,58 @@
                     </section>
                 </section>
             </div>
+            <section id="two" class="wrapper style2 alt">
+                <div class="inner">
+                    <div class="spotlight">
+                        <div class="image">
+                            <img src="img/pic01.jpg" alt="" />
+                        </div>
+                        <div class="content">
+                            <h3 style="color: #0f1315">Magna consequat felis</h3>
+                            <p style="color: #0f1315">Lorem ipsum nisl sed cursus magna et amet veroeros. Sed phasellus malesuada quis orci. Pellentesque eget consequat.</p>
+                            <ul class="actions" style="text-align: right;">
+                                <li style="text-align: left"><i class="fa fa-comment-o fa-2x" aria-hidden="true" ></i></li>
+                                <li><i class="fa fa-heart-o fa-2x" aria-hidden="true" ></i></li>
+                                <li><a href="#" class="button alt" style="background-color: #666666">Details</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="spotlight">
+                        <div class="image">
+                            <img src="img/pic02.jpg" alt="" />
+                        </div>
+                        <div class="content">
+                            <h3 style="color: #0f1315">Magna consequat felis</h3>
+                            <p style="color: #0f1315">Lorem ipsum nisl sed cursus magna et amet veroeros. Sed phasellus malesuada quis orci. Pellentesque eget consequat.</p>
+                            <ul class="actions" style="text-align: right;">
+
+                                <li style="text-align: left"><i class="fa fa-comment-o fa-2x" aria-hidden="true" ></i></li>
+                                <li><i class="fa fa-heart-o fa-2x" aria-hidden="true" ></i></li>
+                                <li><a href="#" class="button alt" style="background-color: #666666">Details</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="spotlight">
+                        <div class="image">
+                            <img src="img/pic03.jpg" alt="" />
+                        </div>
+                        <div class="content">
+                            <h3 style="color: #0f1315">Vitae placerat adipiscing</h3>
+                            <p style="color: #0f1315">Lorem ipsum nisl sed cursus magna et amet veroeros. Sed phasellus malesuada quis orci. Pellentesque eget consequat.</p>
+                            <ul class="actions" style="text-align: right;">
+
+                                <li style="text-align: left"><i class="fa fa-comment-o fa-2x" aria-hidden="true" ></i></li>
+                                <li><i class="fa fa-heart-o fa-2x" aria-hidden="true" ></i></li>
+                                <li><a href="#" class="button alt" style="background-color: #666666">Details</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <ul class="actions special" style="text-align:center">
+                        <li><a href="#" class="button alt" style="background-color: #0f1315;">Ipsum magna tempus</a></li>
+                    </ul>
+                </div>
+            </section>
+
             <div class="4u">
                 <section>
                     <h3>Magna massa blandit</h3>
@@ -142,7 +192,7 @@
 </section>
 
 <!-- Two -->
-<section id="two" class="wrapper style2">
+<section id="two" class="wrapper style2" style="background-color: #0f1315">
     <header class="major">
         <h2>Commodo accumsan aliquam</h2>
         <p>Amet nisi nunc lorem accumsan</p>
@@ -151,7 +201,7 @@
         <div class="row">
             <div class="6u">
                 <section class="special">
-                    <a href="#" class="image fit"><img src="images/pic01.jpg" alt=""/></a>
+                    <a href="#" class="image fit"><img src="img/pic01.jpg" alt=""/></a>
                     <h3>Mollis adipiscing nisl</h3>
                     <p>Eget mi ac magna cep lobortis faucibus accumsan enim lacinia adipiscing metus urna adipiscing cep
                         commodo id. Ac quis arcu amet. Arcu nascetur lorem adipiscing non faucibus odio nullam arcu
@@ -163,7 +213,7 @@
             </div>
             <div class="6u">
                 <section class="special">
-                    <a href="#" class="image fit"><img src="images/pic02.jpg" alt=""/></a>
+                    <a href="#" class="image fit"><img src="img/pic02.jpg" alt=""/></a>
                     <h3>Neque ornare adipiscing</h3>
                     <p>Eget mi ac magna cep lobortis faucibus accumsan enim lacinia adipiscing metus urna adipiscing cep
                         commodo id. Ac quis arcu amet. Arcu nascetur lorem adipiscing non faucibus odio nullam arcu

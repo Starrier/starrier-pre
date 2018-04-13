@@ -4,6 +4,8 @@ var crypto = require('crypto');
 const mysql = require('./../database');
 const markdown = require('markdown-js');
 
+
+
 /* GET home page. */
 router.get('/', function(req, res, next) {
 
@@ -44,7 +46,7 @@ router.post('/login', function(req, res, next) {
         res.redirect('/');
     });
 });
-router.get('/articles/:articleID', function(req, res, next) {
+router.get('/article/:articleID', function(req, res, next) {
     var articleID = req.params.articleID;
     var query = 'SELECT * FROM article WHERE articleID=' + mysql.escape(articleID);
     mysql.query(query, function(err, rows, fields) {
@@ -145,16 +147,13 @@ router.get('/delete/:articleID', function(req, res, next) {
     });
 });
 
-router.get('/articles', function(req, res, next) {
+router.get('/article', function(req, res, next) {
     var user = req.session.user;
 
     if(!user) {
         res.redirect('/login');
         return;
     }
-    res.render('articles',{user:req.session.user});
-});
-/*router.post('/articles', function(req, res, next) {
     var title = req.body.title;
     var content = req.body.content;
     var author = req.session.user.authorName;
@@ -166,12 +165,30 @@ router.get('/articles', function(req, res, next) {
         }
         res.redirect('/');
     });
-});*/
+    res.render('article',{user:req.session.user});
+});
+router.post('/articles', function(req, res, next) {
+    var title = req.body.title;
+    var content = req.body.content;
+    var author = req.session.user.authorName;
+    var query = 'INSERT article SET articleTitle=' + mysql.escape(title) + ',articleAuthor=' + mysql.escape(author) + ',articleContent=' + mysql.escape(content) + ',articleTime=CURDATE()';
+    mysql.query(query, function(err, rows, fields) {
+        if(err) {
+            console.log(err);
+            return;
+        }
+        res.redirect('/');
+    });
+});
 
 router.get('/markdown', function (req, res, next) {
     /* markdown.markHtml(); 是将 markdown 格式的字符转换成 Html。*/
     res.render('index.md', {layout: false});
 });
+
+router.get('/markdowns',function (req, res, next) {
+    res.render('markdown');
+})
 
 
 module.exports = router;

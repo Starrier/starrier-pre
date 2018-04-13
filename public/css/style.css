@@ -525,7 +525,7 @@
 		ul.icons {
 			cursor: default;
 			list-style: none;
-			padding-left: 525px;
+			padding-left: 480px;
 		}
 
 			ul.icons li {
@@ -846,7 +846,6 @@
 		}
 
 		.wrapper.style2 {
-			background: #192024;
 			color: #c5c7c8;
 		}
 
