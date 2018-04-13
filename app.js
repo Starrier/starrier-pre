@@ -13,6 +13,22 @@ var users = require('./routes/users');
 const fs = require('fs');
 const markdown = require('markdown-js');
 
+var webpcak=require('webpack');
+var webpackConfig=require('./webpack.config');
+
+var compiler=webpcak(webpackConfig,function (err, stats) {
+    console.log(stats.toString({
+        colors:true
+    }));
+
+    compiler.watch({
+        aggregateTimeout:300,
+        poil:undefined
+    },function (err, stats) {
+
+    })
+});
+
 var identitykey = 'skey';
 
 var app = express();

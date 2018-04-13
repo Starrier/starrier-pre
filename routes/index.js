@@ -186,6 +186,9 @@ router.get('/markdown', function (req, res, next) {
     res.render('index.md', {layout: false});
 });
 
+router.get('/markdowns',function (req, res, next) {
+    res.render('markdown');
+})
 
 
 module.exports = router;
