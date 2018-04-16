@@ -1,16 +1,12 @@
 const path = require('path');
 const webpack = require('webpack');
-/*
-extract-text-webpack-plugin插件，
-有了它就可以将你的样式提取到单独的css文件里，
-妈妈再也不用担心样式会被打包到js文件里了。
- */
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 /*
 html-webpack-plugin插件，重中之重，webpack中生成HTML的插件，
 具体可以去这里查看https://www.npmjs.com/package/html-webpack-plugin
  */
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const UglifyJsPlugin = require('webpack/lib/optimize/UglifyJsPlugin');
 
 module.exports = {
     entry: { //配置入口文件，有几个写几个
@@ -25,9 +21,17 @@ module.exports = {
     module: {
         rules:[
             {
+                test:/\.js$/,
+                use:['babel-loader'],
+                exclude:path.resolve(__dirname,'node_modules'),
+            },
+            {
                 //配置css的抽取器、加载器。'-loader'可以省去
                 test: /\.css$/,
-                use:['style-loader', 'css-loader']
+                use:ExtractTextPlugin.extract({
+                    use:['style-loader', 'css-loader?minimize']
+                })
+
             },
             {
                 //配置less的抽取器、加载器。中间!有必要解释一下，

@@ -9,6 +9,14 @@
 <body id="top">
 <%- include("./public/header.ejs") %>
 <div id="banners"></div>
+<style type="text/css">
+    .icon {
+        width: 1em; height: 1em;
+        vertical-align: -0.15em;
+        fill: currentColor;
+        overflow: hidden;
+    }
+</style>
 <script type="text/javascript">
     $("#banners").scrollBanner({
         images: [
@@ -115,6 +123,10 @@
                             <h3 style="color: #0f1315">Magna consequat felis</h3>
                             <p style="color: #0f1315">Lorem ipsum nisl sed cursus magna et amet veroeros. Sed phasellus malesuada quis orci. Pellentesque eget consequat.</p>
                             <ul class="actions" style="text-align: right;">
+
+                                <li><svg class="icon" aria-hidden="true">
+                                        <use xlink:href="#icon-icon_favorite"></use>
+                                    </svg></li>
                                 <li style="text-align: left"><i class="fa fa-comment-o fa-2x" aria-hidden="true" ></i></li>
                                 <li><i class="fa fa-heart-o fa-2x" aria-hidden="true" ></i></li>
                                 <li><a href="#" class="button alt" style="background-color: #666666">Details</a></li>
@@ -144,7 +156,6 @@
                             <h3 style="color: #0f1315">Vitae placerat adipiscing</h3>
                             <p style="color: #0f1315">Lorem ipsum nisl sed cursus magna et amet veroeros. Sed phasellus malesuada quis orci. Pellentesque eget consequat.</p>
                             <ul class="actions" style="text-align: right;">
-
                                 <li style="text-align: left"><i class="fa fa-comment-o fa-2x" aria-hidden="true" ></i></li>
                                 <li><i class="fa fa-heart-o fa-2x" aria-hidden="true" ></i></li>
                                 <li><a href="#" class="button alt" style="background-color: #666666">Details</a></li>
