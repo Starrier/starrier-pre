@@ -7,7 +7,6 @@ node_js:
 - "1"
 - "2"
 services:
-  - redis-server
-  - mongodb
-  - memcached
-script: "npm install"
+  - mysql
+script: 
+- npm run test
