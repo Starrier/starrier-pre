@@ -8,16 +8,21 @@
     "build": "webpack --mode production"
   },
   "dependencies": {
-    "body-parser": "^1.18.2",
-    "cookie-parser": "~1.4.3",
+    "babel-core": "^6.26.3",
+    "cookie-parser": "^1.4.4",
     "debug": "~2.6.9",
-    "ejs": "~2.5.7",
-    "express": "~4.16.0",
+    "ejs": "^2.5.9",
+    "express": "^4.16.4",
     "express-session": "^1.15.6",
-    "http-errors": "~1.6.2",
-    "morgan": "~1.9.0",
+    "extract-text-webpack-plugin": "^3.0.2",
+    "http-errors": "^1.6.3",
+    "morgan": "^1.9.1",
     "mysql": "^2.15.0",
-    "serve-favicon": "^2.4.5"
+    "popper.js": "^1.14.7",
+    "safe-buffer": "^5.1.2",
+    "serve-favicon": "^2.4.5",
+    "string_decoder": "^1.2.0",
+    "webpack": "^4.29.5"
   },
   "devDependencies": {
     "acorn": "^5.5.3",
@@ -25,7 +30,7 @@
     "ajv-keywords": "^3.1.0",
     "async-each": "^1.0.1",
     "babel-loader": "^7.1.4",
-    "body-parser": "^1.18.2",
+    "body-parser": "^1.18.3",
     "bootstrap": "^4.1.0",
     "bootstrap-loader": "^2.2.0",
     "buffer-from": "^1.0.0",
