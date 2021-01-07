@@ -6,8 +6,10 @@ node_js:
 before_install:
   - npm install -g codecov
 script:
-  - istanbul cover test.js --reporter lcovonly -- -R spec
+  - istanbul cover -x test.js _mocha
   - codecov
+after_success:
+  - bash <(curl -s https://codecov.io/bash)
 
   # before_script:
   #   - npm run test

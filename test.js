@@ -6,10 +6,12 @@ describe('Calculator Tests', function() {
     describe('Addition Tests', function() {
         it('returns 1 + 1 = 2', function(done) {
             assert.equal(calc.add(1, 1), 2);
+            done();
         });
 
         it('returns 1 + -1 = 0', function(done) {
             assert.equal(calc.add(1, -1), 0);
+            done();
         });
     });
 
