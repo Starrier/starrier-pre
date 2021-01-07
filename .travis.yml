@@ -6,7 +6,7 @@ node_js:
 before_install:
   - npm install -g codecov
 script:
-  - istanbul cover -x test.js _mocha
+  - mocha test.js
   - codecov
 after_success:
   - bash <(curl -s https://codecov.io/bash)
