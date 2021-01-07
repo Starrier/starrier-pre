@@ -35,6 +35,7 @@
     "bootstrap-loader": "^2.2.0",
     "buffer-from": "^1.0.0",
     "co": "^4.6.0",
+    "codecov": "^3.8.1",
     "css-loader": "^0.28.11",
     "css-select": "^2.0.0",
     "dom-converter": "^0.1.4",
