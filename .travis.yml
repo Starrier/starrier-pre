@@ -1,7 +1,18 @@
-language:
-  node_js
-install:
+language: node_js
+
+node_js:
+  - 10.15.3
+
+before_install:
   - npm install -g codecov
 script:
-  - istanbul cover ./node_modules/mocha/bin/_mocha --reporter lcovonly -- -R spec
+  - mocha test.js
   - codecov
+after_success:
+  - bash <(curl -s https://codecov.io/bash)
+
+  # before_script:
+  #   - npm run test
+
+  #script:
+  # - npm run test
