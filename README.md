@@ -1,8 +1,9 @@
 # Starrier
 
 [![Build Status](https://travis-ci.org/Starrier/Starrier.svg?branch=master)](https://travis-ci.org/Starrier/Starrier)
+[![Maintainability](https://api.codeclimate.com/v1/badges/7f09816a4e82f592e31e/maintainability)](https://codeclimate.com/github/Starrier/Starrier/maintainability)
 
-[www.starrier.org](http://www.starrier.org)
+## [www.starrier.org](http://www.starrier.org)
 
 ----
 
